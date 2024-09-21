@@ -1,0 +1,17 @@
+#dropArea {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#dropArea p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+#preview img {
+    max-width: 100%;
+    height: auto;
+}

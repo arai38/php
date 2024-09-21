@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Upload</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  #dropArea {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+  }
+  #preview img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<h1>Image Upload</h1>
+ <li><a href="px.html">px.html</a></li>
+<form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+  <!-- MAX_FILE_SIZEはバイト単位で指定します -->
+  <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+  <input type="file" id="imageInput" name="image" accept="image/*" style="display: none;" required>
+  <div id="dropArea">Drag & Drop your image here or click to select</div>
+  <button type="submit">Upload</button>
+</form>
+
+<div id="preview"></div>
+<div id="result">
+<?php
+if (isset($_GET['message'])) {
+  echo htmlspecialchars($_GET['message']);
+}
+?>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
